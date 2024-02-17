@@ -1,0 +1,7 @@
+{
+  "name": "aseguradoras-test-fe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
