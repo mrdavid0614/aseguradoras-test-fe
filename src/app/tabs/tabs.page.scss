@@ -1,1 +1,12 @@
+ion-tab-button {
+  font-weight: bold;
 
+  ion-label {
+    padding-bottom: 10px;
+  }
+
+  &.tab-selected ion-label {
+    width: 100%;
+    border-bottom: 3px solid #00578c;
+  }
+}

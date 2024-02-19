@@ -1,0 +1,41 @@
+<ion-card>
+  <ion-img
+    [src]="insuranceCarrier.logo"
+    alt="Aseguradora {{ insuranceCarrier.name }}"
+  />
+  <ion-card-header>
+    <ion-card-title>{{ insuranceCarrier.name }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ insuranceCarrier.description }}
+  </ion-card-content>
+
+  <ion-button fill="clear" id="edit-modal-{{ insuranceCarrier.id }}"
+    >Editar</ion-button
+  >
+  <ion-button fill="clear" color="danger" (click)="deleteInsuranceCarrier()"
+    >Eliminar</ion-button
+  >
+
+  <ion-modal trigger="edit-modal-{{ insuranceCarrier.id }}">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="closeModal()">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-title>Editar aseguradora</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <app-insurance-carrier-form
+          [insuranceCarrier]="insuranceCarrier"
+          (submitted)="closeModal()"
+        ></app-insurance-carrier-form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-card>

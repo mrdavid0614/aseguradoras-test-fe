@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div>
+      <ion-icon name="arrow-back"></ion-icon><ion-title>Inicio</ion-title>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button class="notifications-btn">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger">3</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-img src="/assets/logo.jpeg" class="logo-img"></ion-img>
+    <ion-buttons slot="end">
+      <ion-button class="menu-btn">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="page-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <main class="page-content">
+    <section class="ion-text-center">
+      <h1>¿Qué quieres hacer hoy?</h1>
+
+      <div class="header-text">
+        <h2>Cotizar una poliza</h2>
+      </div>
+    </section>
+
+    @if (insuranceCarriers.length) {
+    <section class="insurance-carriers-container">
+      <h3 class="ion-text-center">Aseguradoras más populares</h3>
+      <section class="insurance-carriers">
+        @for (insuranceCarrier of insuranceCarriers; track $index) {
+        <app-insurance-carrier-mini
+          [imgSrc]="insuranceCarrier.logo"
+        ></app-insurance-carrier-mini>
+        }
+      </section>
+      <div class="view-more">
+        <a routerLink="/tabs/saved"> Ver más aseguradoras</a>
+        <ion-icon name="arrow-forward" mode="ios"></ion-icon>
+      </div>
+    </section>
+    }
+
+    <section>
+      <section class="banner">
+        <ion-img src="/assets/banner.jpeg" alt="Offer banner"></ion-img>
+      </section>
+
+      <section class="buttons">
+        <ion-button shape="round" color="primary"
+          >Inicia sesión aquí</ion-button
+        >
+        <ion-button shape="round" color="primary">Registrate aquí</ion-button>
+      </section>
+    </section>
+  </main>
+</ion-content>

@@ -1,0 +1,15 @@
+article {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border: 3px solid #dff2fa;
+  border-radius: 10px;
+  box-shadow: 0px 6px 6px -1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 6px 6px -1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 6px 6px -1px rgba(0, 0, 0, 0.15);
+
+  ion-img {
+    width: 100px;
+    height: 50px;
+  }
+}
